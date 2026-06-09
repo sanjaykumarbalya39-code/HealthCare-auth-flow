@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MedCare Health clinician dashboard — Clinical workspace and patient management.">
+  <title>Clinician Dashboard | MedCare Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="preloader-active" data-dashboard="researcher">
+  <div id="preloader" class="preloader" role="status" aria-live="polite" aria-busy="true" aria-label="Loading dashboard">
+    <div class="preloader__bg" aria-hidden="true"></div>
+    <div class="preloader__inner">
+      <div class="preloader__helix" aria-hidden="true">
+        <svg class="preloader__dna" viewBox="0 0 64 64" fill="none"><path class="preloader__strand preloader__strand--a" d="M32 4 C20 16, 44 28, 32 40 C20 52, 44 60, 32 60" stroke="url(#drA)" stroke-width="2.5" stroke-linecap="round"/><path class="preloader__strand preloader__strand--b" d="M32 4 C44 16, 20 28, 32 40 C44 52, 20 60, 32 60" stroke="url(#drB)" stroke-width="2.5" stroke-linecap="round"/><circle class="preloader__node" cx="32" cy="12" r="3" fill="#1a8f6f"/><circle class="preloader__node" cx="22" cy="28" r="3" fill="#0d6e55"/><defs><linearGradient id="drA" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a8f6f"/><stop offset="100%" stop-color="#0d6e55"/></linearGradient><linearGradient id="drB" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0d6e55"/><stop offset="100%" stop-color="#0a5440"/></linearGradient></defs></svg>
+      </div>
+      <img src="assets/stackly-logo.webp" alt="MedCare Health" class="preloader__logo" width="180" height="52">
+      <p class="preloader__tagline">Healthcare &amp; Patient Services</p>
+      <div class="preloader__bar" aria-hidden="true"><span class="preloader__bar-fill" id="preloaderBar"></span></div>
+      <p class="preloader__status" id="preloaderStatus">Loading your clinical workspace…</p>
+    </div>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+  <div class="profile-dropdown-backdrop" id="profileBackdrop" aria-hidden="true"></div>
+
+  <div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar" aria-label="Clinician navigation">
+      <div class="sidebar__header">
+        <a href="#" class="sidebar__logo" aria-label="MedCare Health dashboard">
+          <img src="assets/stackly-logo.webp" alt="MedCare Health" width="140" height="36">
+        
+        </a>
+      </div>
+      <div class="sidebar__profile">
+        <div class="sidebar__profile-avatar" id="sidebarProfileAvatar" aria-hidden="true">VN</div>
+        <div class="sidebar__profile-info">
+          <span class="sidebar__profile-name" id="sidebarProfileName">Dr. Vamsi</span>
+          <span class="sidebar__profile-email" id="sidebarProfileEmail">you@email.com</span>
+        </div>
+      </div>
+      <nav class="sidebar__nav">
+        <p class="sidebar__label">Clinical Tools</p>
+        <button type="button" class="sidebar__link is-active" data-section="dashboard" aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+          Dashboard
+        </button>
+        <button type="button" class="sidebar__link" data-section="studies">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          My Patients
+        </button>
+        <button type="button" class="sidebar__link" data-section="samples">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Lab Orders
+        </button>
+        <button type="button" class="sidebar__link" data-section="reports">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Reports
+        </button>
+      </nav>
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__logout" data-logout aria-label="Log out">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <div class="dashboard-main page-reveal">
+      <header class="topbar">
+        <button type="button" class="topbar__toggle" id="sidebarToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        <div class="topbar__search">
+          <span class="topbar__search-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </span>
+          <label for="dashboardSearch" class="sr-only">Search studies and samples</label>
+          <input type="search" id="dashboardSearch" placeholder="Search patients, orders, reports…" autocomplete="off">
+        </div>
+        <div class="topbar__actions">
+          <span class="role-badge" aria-label="Account role">Clinician</span>
+          <div class="dropdown-wrap">
+            <button type="button" class="topbar__icon-btn" id="notifBtn" aria-label="Notifications" aria-expanded="false" aria-haspopup="true" aria-controls="notifDropdown">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+              <span class="topbar__badge-dot" aria-hidden="true"></span>
+            </button>
+            <div class="dropdown" id="notifDropdown" role="menu" aria-label="Notifications">
+              <div class="dropdown__header">Notifications</div>
+              <ul class="dropdown__list" id="notifList"></ul>
+            </div>
+          </div>
+          <div class="dropdown-wrap">
+            <button type="button" class="profile-btn" id="profileBtn" aria-label="Profile menu" aria-expanded="false" aria-haspopup="true" aria-controls="profileDropdown">
+              <span class="profile-btn__avatar" id="profileAvatar">SC</span>
+              <span class="profile-btn__info">
+                <span class="profile-btn__name" id="profileName">Dr. Sarah Chen</span>
+                <span class="profile-btn__email" id="profileEmail">you@institution.edu</span>
+              </span>
+              <span class="profile-btn__chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+            </button>
+            <div class="dropdown dropdown--profile" id="profileDropdown" role="menu">
+              <div class="dropdown__profile-card">
+                <span class="dropdown__profile-avatar" id="dropdownProfileAvatar" aria-hidden="true">SC</span>
+                <div>
+                  <div class="dropdown__profile-name" id="dropdownProfileName">Dr. Sarah Chen</div>
+                  <div class="dropdown__profile-email" id="dropdownProfileEmail">you@institution.edu</div>
+                </div>
+              </div>
+              <button type="button" class="dropdown__menu-link" data-profile-action="profile" role="menuitem">My Profile</button>
+              <button type="button" class="dropdown__menu-link" data-profile-action="settings" role="menuitem">Account Settings</button>
+              <button type="button" class="dropdown__menu-link dropdown__menu-link--danger" data-logout role="menuitem">Logout</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content" id="main-content">
+        <div class="dashboard-section is-active" data-section="dashboard">
+        <div class="dashboard-welcome dashboard-welcome--hero">
+          <div class="dashboard-welcome__text">
+            <h1>Good day, Dr. <span id="welcomeName">Sarah</span></h1>
+            <p class="dashboard-welcome__email" id="welcomeEmail">you@institution.edu</p>
+            <p class="dashboard-welcome__desc">Your clinical workspace — patient cases, lab orders, and care team reports at a glance.</p>
+          </div>
+          <div class="dashboard-welcome__badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+        </div>
+
+        <div class="stats-grid" id="statsGrid" aria-label="Clinical statistics"></div>
+
+        <div class="dashboard-grid">
+          <section class="panel" aria-labelledby="activityTitle">
+            <div class="panel__header">
+              <h2 class="panel__title" id="activityTitle">Patient Activity</h2>
+              <a href="#" class="panel__link">View analytics</a>
+            </div>
+            <div class="chart-area" id="activityChart" role="img" aria-label="Monthly patient activity chart"></div>
+          </section>
+
+          <section class="panel" aria-labelledby="quickActionsTitle">
+            <div class="panel__header">
+              <h2 class="panel__title" id="quickActionsTitle">Quick Actions</h2>
+            </div>
+            <div class="quick-actions">
+              <button type="button" class="quick-action">
+                <span class="quick-action__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                <span><span class="quick-action__title">New Case</span><span class="quick-action__desc"> Open a new patient case file</span></span>
+              </button>
+              <button type="button" class="quick-action">
+                <span class="quick-action__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg></span>
+                <span><span class="quick-action__title">Upload Records</span><span class="quick-action__desc"> Import lab results or imaging files</span></span>
+              </button>
+              <button type="button" class="quick-action">
+                <span class="quick-action__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></span>
+                <span><span class="quick-action__title">Export Summary</span><span class="quick-action__desc"> Generate a clinical care summary</span></span>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel" aria-labelledby="studiesTitle">
+          <div class="panel__header">
+            <h2 class="panel__title" id="studiesTitle">Recent Patients</h2>
+            <button type="button" class="panel__link" data-section-jump="studies">View all patients</button>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Case ID</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Attending Clinician</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Samples</th>
+                </tr>
+              </thead>
+              <tbody id="studiesTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+        </div>
+
+        <div class="dashboard-section" data-section="studies" hidden>
+          <div class="section-page-header">
+            <h2>My Patients</h2>
+            <p>Manage active patient cases, referrals, and clinical workflows.</p>
+          </div>
+          <section class="panel">
+            <div class="panel__header">
+              <h2 class="panel__title">All Patient Cases</h2>
+            </div>
+            <div class="data-table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Case ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Attending Clinician</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Samples</th>
+                  </tr>
+                </thead>
+                <tbody id="studiesTableBodyFull"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <div class="dashboard-section" data-section="samples" hidden>
+          <div class="section-page-header">
+            <h2>Lab Orders</h2>
+            <p>Track lab orders, specimen status, and diagnostic test results.</p>
+          </div>
+          <div class="stats-grid" id="samplesStatsGrid"></div>
+          <section class="panel">
+            <div class="panel__header">
+              <h2 class="panel__title">Lab Order Inventory</h2>
+            </div>
+            <div class="data-table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Order ID</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Study</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Storage</th>
+                  </tr>
+                </thead>
+                <tbody id="samplesTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <div class="dashboard-section" data-section="reports" hidden>
+          <div class="section-page-header">
+            <h2>Reports</h2>
+            <p>Export clinical summaries, discharge notes, and care analytics reports.</p>
+          </div>
+          <section class="panel">
+            <div class="panel__header">
+              <h2 class="panel__title">Clinical Reports</h2>
+            </div>
+            <div id="reportsList"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="dashboard-toast" id="dashboardToast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/preloader.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

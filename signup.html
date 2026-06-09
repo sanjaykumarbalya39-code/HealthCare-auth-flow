@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your MedCare Health account — Patient and clinician portal registration.">
+  <title>Create Account | MedCare Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="preloader-active auth-dark">
+  <div id="preloader" class="preloader" role="status" aria-live="polite" aria-busy="true" aria-label="Loading">
+    <div class="preloader__bg" aria-hidden="true"></div>
+    <div class="preloader__inner">
+      <div class="preloader__helix" aria-hidden="true">
+        <svg class="preloader__dna" viewBox="0 0 64 64" fill="none"><path class="preloader__strand preloader__strand--a" d="M32 4 C20 16, 44 28, 32 40 C20 52, 44 60, 32 60" stroke="url(#sgA)" stroke-width="2.5" stroke-linecap="round"/><path class="preloader__strand preloader__strand--b" d="M32 4 C44 16, 20 28, 32 40 C44 52, 20 60, 32 60" stroke="url(#sgB)" stroke-width="2.5" stroke-linecap="round"/><circle class="preloader__node" cx="32" cy="12" r="3" fill="#1a8f6f"/><defs><linearGradient id="sgA" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a8f6f"/><stop offset="100%" stop-color="#0d6e55"/></linearGradient><linearGradient id="sgB" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0d6e55"/><stop offset="100%" stop-color="#0a5440"/></linearGradient></defs></svg>
+      </div>
+      <img src="assets/stackly-logo.webp" alt="MedCare Health" class="preloader__logo" width="180" height="52">
+      <p class="preloader__tagline">Healthcare &amp; Patient Services</p>
+      <div class="preloader__bar" aria-hidden="true"><span class="preloader__bar-fill" id="preloaderBar"></span></div>
+      <p class="preloader__status" id="preloaderStatus">Preparing your registration…</p>
+    </div>
+  </div>
+
+  <main class="auth-screen page-reveal" id="main-content">
+    <div class="auth-screen__bg" aria-hidden="true"></div>
+
+    <div class="auth-wrap auth-wrap--signup">
+      <div class="auth-card auth-card--signup">
+        <header class="auth-card__header">
+          <a href="login.html" class="auth-card__logo" aria-label="MedCare Health">
+            <img src="assets/stackly-logo.webp" alt="MedCare Health" width="240" height="68">
+          </a>
+          <h1 class="auth-card__title auth-card__title--gradient">Create Your Account</h1>
+          <p class="auth-card__subtitle">Join the MedCare patient &amp; clinician network</p>
+        </header>
+
+        <div class="auth-success" id="signupSuccess" role="status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          Account created successfully!
+        </div>
+
+        <form class="auth-form" id="signupForm" novalidate>
+          <div class="form-row form-row--split">
+            <div class="form-group">
+              <label for="signupName" class="form-label">Full Name</label>
+              <input type="text" id="signupName" name="fullName" class="form-input" placeholder="Enter your name" autocomplete="name" required aria-describedby="signupNameError">
+              <span class="form-error" id="signupNameError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="signupRole" class="form-label">Role</label>
+              <div class="select-wrap">
+                <select id="signupRole" name="accountType" class="form-select form-select--accent" data-role-select required aria-describedby="signupRoleError">
+                  <option value="" disabled selected>Select</option>
+                  <option value="researcher">Clinician</option>
+                  <option value="user">Patient</option>
+                </select>
+              </div>
+              <span class="form-error" id="signupRoleError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signupEmail" class="form-label">Email Address</label>
+            <input type="email" id="signupEmail" name="email" class="form-input" placeholder="Enter your email" autocomplete="email" required aria-describedby="signupEmailError">
+            <span class="form-error" id="signupEmailError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="signupOrg" class="form-label">Hospital / Clinic</label>
+            <input type="text" id="signupOrg" name="organization" class="form-input" placeholder="Enter your hospital or clinic name" required aria-describedby="signupOrgError">
+            <span class="form-error" id="signupOrgError" role="alert"></span>
+          </div>
+
+          <div class="form-row form-row--split">
+            <div class="form-group">
+              <label for="signupPassword" class="form-label">Password</label>
+              <div class="input-wrap">
+                <input type="password" id="signupPassword" name="password" class="form-input" placeholder="Min 8 chars" autocomplete="new-password" required minlength="6" aria-describedby="signupPasswordError">
+                <button type="button" class="password-toggle" data-toggle-password aria-controls="signupPassword" aria-label="Show password" aria-pressed="false">
+                  <span class="icon-show" hidden aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                  <span class="icon-hide" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><path d="M1 1l22 22"/></svg></span>
+                </button>
+              </div>
+              <span class="form-error" id="signupPasswordError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="signupConfirm" class="form-label">Confirm</label>
+              <div class="input-wrap">
+                <input type="password" id="signupConfirm" name="confirmPassword" class="form-input" placeholder="Repeat password" autocomplete="new-password" required aria-describedby="signupConfirmError">
+                <button type="button" class="password-toggle" data-toggle-password aria-controls="signupConfirm" aria-label="Show password" aria-pressed="false">
+                  <span class="icon-show" hidden aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                  <span class="icon-hide" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><path d="M1 1l22 22"/></svg></span>
+                </button>
+              </div>
+              <span class="form-error" id="signupConfirmError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-group terms-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="signupTerms" name="terms" required aria-describedby="signupTermsError">
+              <span>I agree to the <a href="404.html" class="auth-link">Terms of Service</a> &amp; <a href="404.html" class="auth-link">Privacy Policy</a></span>
+            </label>
+            <span class="form-error" id="signupTermsError" role="alert"></span>
+          </div>
+
+          <button type="submit" class="btn-auth btn-auth--gradient">Create My Account</button>
+        </form>
+
+        <p class="auth-footer-text">Already have an account? <a href="login.html" class="auth-link">Sign in here</a></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/preloader.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

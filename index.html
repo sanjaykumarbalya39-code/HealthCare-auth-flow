@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0;url=login.html">
+  <meta name="description" content="MedCare Health — Secure patient and clinician portal">
+  <title>MedCare Health | Redirecting…</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="preloader-active" data-redirect="login.html">
+  <div id="preloader" class="preloader" role="status" aria-live="polite" aria-busy="true" aria-label="Loading MedCare Health">
+    <div class="preloader__bg" aria-hidden="true"></div>
+    <div class="preloader__inner">
+      <div class="preloader__helix" aria-hidden="true">
+        <svg class="preloader__dna" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="preloader__strand preloader__strand--a" d="M32 4 C20 16, 44 28, 32 40 C20 52, 44 60, 32 60" stroke="url(#preloaderGradA)" stroke-width="2.5" stroke-linecap="round"/>
+          <path class="preloader__strand preloader__strand--b" d="M32 4 C44 16, 20 28, 32 40 C44 52, 20 60, 32 60" stroke="url(#preloaderGradB)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle class="preloader__node" cx="32" cy="12" r="3" fill="#1a8f6f"/>
+          <circle class="preloader__node" cx="22" cy="28" r="3" fill="#0d6e55"/>
+          <circle class="preloader__node" cx="42" cy="28" r="3" fill="#1a8f6f"/>
+          <circle class="preloader__node" cx="32" cy="44" r="3" fill="#0d6e55"/>
+          <circle class="preloader__node" cx="22" cy="56" r="3" fill="#1a8f6f"/>
+          <circle class="preloader__node" cx="42" cy="56" r="3" fill="#0d6e55"/>
+          <defs>
+            <linearGradient id="preloaderGradA" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1a8f6f"/>
+              <stop offset="100%" stop-color="#0d6e55"/>
+            </linearGradient>
+            <linearGradient id="preloaderGradB" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#0d6e55"/>
+              <stop offset="100%" stop-color="#0a5440"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <img src="assets/stackly-logo.webp" alt="MedCare Health" class="preloader__logo" width="180" height="52">
+      <p class="preloader__tagline">Healthcare &amp; Patient Services</p>
+      <div class="preloader__bar" aria-hidden="true">
+        <span class="preloader__bar-fill" id="preloaderBar"></span>
+      </div>
+      <p class="preloader__status" id="preloaderStatus">Connecting to secure health systems…</p>
+    </div>
+  </div>
+
+  <main class="entry-page page-reveal" aria-label="Redirecting to login">
+    <div class="entry-page__bg" aria-hidden="true"></div>
+    <div class="entry-page__blur entry-page__blur--1" aria-hidden="true"></div>
+    <div class="entry-page__blur entry-page__blur--2" aria-hidden="true"></div>
+    <div class="entry-page__content">
+      <img src="assets/stackly-logo.webp" alt="MedCare Health" class="entry-page__logo" width="200" height="56">
+      <h1 class="entry-page__title">MedCare Health</h1>
+      <p class="entry-page__text">Compassionate Care, Powered by Technology. Redirecting to secure login…</p>
+      <div class="entry-page__spinner" role="status" aria-label="Loading"></div>
+    </div>
+  </main>
+
+  <script src="js/preloader.js"></script>
+  <script src="js/main.js"></script>
+  <script>window.location.replace('login.html');</script>
+</body>
+</html>
