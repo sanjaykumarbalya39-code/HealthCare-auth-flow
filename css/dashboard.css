@@ -283,6 +283,21 @@ body.sidebar-open {
   position: relative;
 }
 
+.topbar .sidebar__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin: 0 auto;
+}
+
+.topbar .sidebar__logo img {
+  display: block;
+  height: 50px;
+  width: auto;
+  margin: 0 auto;
+}
+
 .topbar__search input {
   width: 100%;
   padding: 11px 16px 11px 42px;

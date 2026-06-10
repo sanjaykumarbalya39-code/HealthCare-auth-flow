@@ -225,6 +225,15 @@
     min-width: 0;
   }
 
+  .topbar .sidebar__logo {
+    max-width: 110px;
+  }
+
+  .topbar .sidebar__logo img {
+    height: 36px;
+    width: auto;
+  }
+
   .profile-btn__info {
     display: none;
   }
@@ -400,6 +409,15 @@
     order: 3;
     flex: 1 1 100%;
     width: 100%;
+  }
+
+  .topbar .sidebar__logo {
+    max-width: 96px;
+  }
+
+  .topbar .sidebar__logo img {
+    height: 28px;
+    width: auto;
   }
 
   .topbar {
