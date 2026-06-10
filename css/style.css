@@ -399,3 +399,48 @@ button {
   gap: 14px;
   justify-content: center;
 }
+
+/* Premium glass UI layer */
+:root {
+  --premium-glass: rgba(255, 255, 255, 0.72);
+  --premium-glass-strong: rgba(255, 255, 255, 0.86);
+  --premium-glass-dark: rgba(6, 26, 18, 0.66);
+  --premium-stroke: rgba(255, 255, 255, 0.58);
+  --premium-shadow: 0 24px 70px rgba(6, 26, 18, 0.16);
+  --premium-shadow-deep: 0 32px 90px rgba(6, 18, 28, 0.36);
+}
+
+.entry-page__bg,
+.error-page__bg {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(ellipse 70% 56% at 50% 25%, rgba(39, 201, 142, 0.24), transparent 66%),
+    radial-gradient(circle at 14% 86%, rgba(26, 175, 133, 0.14), transparent 42%),
+    linear-gradient(155deg, #061a12 0%, #0a2836 55%, #063b3d 100%);
+  background-size: 52px 52px, 52px 52px, auto, auto, auto;
+  animation: premiumGridDrift 18s linear infinite;
+}
+
+.entry-page__content,
+.error-content {
+  padding: 38px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045));
+  box-shadow: var(--premium-shadow-deep), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.entry-page__spinner {
+  width: 42px;
+  height: 42px;
+  border-width: 4px;
+  box-shadow: 0 0 32px rgba(39, 201, 142, 0.35);
+}
+
+@keyframes premiumGridDrift {
+  from { background-position: 0 0, 0 0, center, center, center; }
+  to { background-position: 52px 52px, -52px 52px, center, center, center; }
+}
