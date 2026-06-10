@@ -1607,3 +1607,164 @@ a.panel__link {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Colorful dashboard cards inspired by modern healthcare apps */
+.dashboard-content .stat-card:nth-child(4n + 1) {
+  background:
+    radial-gradient(circle at 88% 16%, rgba(255, 255, 255, 0.5), transparent 26%),
+    linear-gradient(135deg, #7c3aed 0%, #c026d3 100%);
+  color: #ffffff;
+}
+
+.dashboard-content .stat-card:nth-child(4n + 2) {
+  background:
+    radial-gradient(circle at 88% 16%, rgba(255, 255, 255, 0.5), transparent 26%),
+    linear-gradient(135deg, #0284c7 0%, #14b8a6 100%);
+  color: #ffffff;
+}
+
+.dashboard-content .stat-card:nth-child(4n + 3) {
+  background:
+    radial-gradient(circle at 88% 16%, rgba(255, 255, 255, 0.5), transparent 26%),
+    linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+  color: #ffffff;
+}
+
+.dashboard-content .stat-card:nth-child(4n + 4) {
+  background:
+    radial-gradient(circle at 88% 16%, rgba(255, 255, 255, 0.5), transparent 26%),
+    linear-gradient(135deg, #ef4444 0%, #fb7185 100%);
+  color: #ffffff;
+}
+
+.dashboard-content .stat-card .stat-card__value,
+.dashboard-content .stat-card .stat-card__label,
+.dashboard-content .stat-card .stat-card__change {
+  color: #ffffff;
+}
+
+.dashboard-content .stat-card .stat-card__label,
+.dashboard-content .stat-card .stat-card__change {
+  opacity: 0.82;
+}
+
+.dashboard-content .stat-card .stat-card__icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24), 0 12px 26px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-content .stat-card::after {
+  background: rgba(255, 255, 255, 0.48);
+  opacity: 1;
+}
+
+.dashboard-content .quick-action:nth-child(1) {
+  background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.dashboard-content .quick-action:nth-child(2) {
+  background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.dashboard-content .quick-action:nth-child(3) {
+  background: linear-gradient(135deg, #facc15 0%, #f59e0b 100%);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.dashboard-content .quick-action:nth-child(4) {
+  background: linear-gradient(135deg, #fb7185 0%, #ef4444 100%);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.dashboard-content .quick-action .quick-action__title,
+.dashboard-content .quick-action .quick-action__desc {
+  color: #ffffff;
+}
+
+.dashboard-content .quick-action .quick-action__desc {
+  opacity: 0.82;
+}
+
+.dashboard-content .quick-action .quick-action__icon {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+}
+
+.dashboard-content .appointment-card:nth-child(4n + 1) {
+  background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%);
+}
+
+.dashboard-content .appointment-card:nth-child(4n + 2) {
+  background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+}
+
+.dashboard-content .appointment-card:nth-child(4n + 3) {
+  background: linear-gradient(135deg, #facc15 0%, #f59e0b 100%);
+}
+
+.dashboard-content .appointment-card:nth-child(4n + 4) {
+  background: linear-gradient(135deg, #fb7185 0%, #ef4444 100%);
+}
+
+.dashboard-content .appointment-card {
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.12);
+}
+
+.dashboard-content .appointment-card__title,
+.dashboard-content .appointment-card__meta {
+  color: #ffffff;
+}
+
+.dashboard-content .appointment-card__meta {
+  opacity: 0.82;
+}
+
+.dashboard-content .appointment-card__date {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.dashboard-content .result-row,
+.dashboard-content .message-preview {
+  margin-bottom: 10px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: var(--radius-md);
+}
+
+.dashboard-content .result-row:nth-child(4n + 1),
+.dashboard-content .message-preview:nth-child(4n + 1) {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.12), rgba(217, 70, 239, 0.08));
+}
+
+.dashboard-content .result-row:nth-child(4n + 2),
+.dashboard-content .message-preview:nth-child(4n + 2) {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(37, 99, 235, 0.08));
+}
+
+.dashboard-content .result-row:nth-child(4n + 3),
+.dashboard-content .message-preview:nth-child(4n + 3) {
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.16), rgba(245, 158, 11, 0.09));
+}
+
+.dashboard-content .result-row:nth-child(4n + 4),
+.dashboard-content .message-preview:nth-child(4n + 4) {
+  background: linear-gradient(135deg, rgba(251, 113, 133, 0.14), rgba(239, 68, 68, 0.08));
+}
+
+.dashboard-content .message-preview__avatar {
+  background: linear-gradient(135deg, #0ea5e9, #a855f7);
+  color: #ffffff;
+}
